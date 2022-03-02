@@ -58,6 +58,8 @@ namespace Microsoft.VisualStudio.TestPlatform.MSTest.TestAdapter
             ITestCaseDiscoverySink discoverySink,
             IDiscoveryContext discoveryContext)
         {
+            // System.Diagnostics.Debugger.Break();
+            // System.Diagnostics.Debugger.Launch();
             var testElements = this.assemblyEnumeratorWrapper.GetTests(source, discoveryContext?.RunSettings, out var warnings);
 
             // log the warnings

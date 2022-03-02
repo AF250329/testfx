@@ -20,7 +20,7 @@ namespace Microsoft.VisualStudio.TestTools.UnitTesting
         /// <summary>
         /// Gets test properties for a test.
         /// </summary>
-        public abstract IDictionary Properties { get; }
+        public virtual IDictionary Properties { get; }
 
         /// <summary>
         /// Gets or sets the cancellation token source. This token source is canceled when test times out. Also when explicitly canceled the test will be aborted
@@ -30,12 +30,12 @@ namespace Microsoft.VisualStudio.TestTools.UnitTesting
         /// <summary>
         /// Gets the current data row when test is used for data driven testing.
         /// </summary>
-        public abstract DataRow DataRow { get; }
+        public virtual DataRow DataRow { get; }
 
         /// <summary>
         /// Gets current data connection row when test is used for data driven testing.
         /// </summary>
-        public abstract DbConnection DataConnection { get; }
+        public virtual DbConnection DataConnection { get; }
 
         #region Test run deployment directories
 
@@ -124,27 +124,35 @@ namespace Microsoft.VisualStudio.TestTools.UnitTesting
         /// Used to write trace messages while the test is running
         /// </summary>
         /// <param name="message">formatted message string</param>
-        public abstract void Write(string message);
+        public virtual void Write(string message)
+        {
+        }
 
         /// <summary>
         /// Used to write trace messages while the test is running
         /// </summary>
         /// <param name="format">format string</param>
         /// <param name="args">the arguments</param>
-        public abstract void Write(string format, params object[] args);
+        public virtual void Write(string format, params object[] args)
+        {
+        }
 
         /// <summary>
         /// Used to write trace messages while the test is running
         /// </summary>
         /// <param name="message">formatted message string</param>
-        public abstract void WriteLine(string message);
+        public virtual void WriteLine(string message)
+        {
+        }
 
         /// <summary>
         /// Used to write trace messages while the test is running
         /// </summary>
         /// <param name="format">format string</param>
         /// <param name="args">the arguments</param>
-        public abstract void WriteLine(string format, params object[] args);
+        public virtual void WriteLine(string format, params object[] args)
+        {
+        }
 
         /// <summary>
         /// Adds a file name to the list in TestResult.ResultFileNames
@@ -152,19 +160,25 @@ namespace Microsoft.VisualStudio.TestTools.UnitTesting
         /// <param name="fileName">
         /// The file Name.
         /// </param>
-        public abstract void AddResultFile(string fileName);
+        public virtual void AddResultFile(string fileName)
+        {
+        }
 
         /// <summary>
         /// Begins a timer with the specified name
         /// </summary>
         /// <param name="timerName"> Name of the timer.</param>
-        public abstract void BeginTimer(string timerName);
+        public virtual void BeginTimer(string timerName)
+        {
+        }
 
         /// <summary>
         /// Ends a timer with the specified name
         /// </summary>
         /// <param name="timerName"> Name of the timer.</param>
-        public abstract void EndTimer(string timerName);
+        public virtual void EndTimer(string timerName)
+        {
+        }
 
         private T GetProperty<T>(string name)
             where T : class
