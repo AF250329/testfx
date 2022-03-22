@@ -6,6 +6,11 @@ Add-Type -AssemblyName System.IO.Compression.FileSystem
 # Common utilities for building solution and running tests
 
 $TF_ROOT_DIR = (Get-Item (Split-Path $MyInvocation.MyCommand.Path)).Parent.FullName
+
+#DEBUG
+Write-Host "=== Root path set to: $TF_ROOT_DIR"
+#DEBUG
+
 $TF_VERSIONS_FILE = "$TF_ROOT_DIR\eng\Versions.props"
 $TF_OUT_DIR = Join-Path $TF_ROOT_DIR "artifacts"
 $TF_SRC_DIR = Join-Path $TF_ROOT_DIR "src"
