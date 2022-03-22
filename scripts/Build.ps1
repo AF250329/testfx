@@ -202,7 +202,7 @@ function Perform-Restore {
 function Perform-Build {
   $timer = Start-Timer
 
-  Write-Log "Perform-Build: Started."
+  Write-Log "Perform-Build: Started." 
 
   #DEBUG  
   Get-ChildItem . -Recurse
