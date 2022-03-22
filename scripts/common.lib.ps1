@@ -135,9 +135,9 @@ function Locate-PackagesPath {
 function Locate-VsWhere {
   $packagesPath = Locate-PackagesPath 
 
-  #DEBUG
-  Get-ChildItem -Path $packagesPath -Recurse
-  #DEBUG  
+  # #DEBUG
+  # Get-ChildItem -Path $packagesPath -Recurse
+  # #DEBUG  
 
 
   # $vswhere = Join-Path -path $packagesPath -childPath "vswhere\$vswhereVersion\tools\vswhere.exe"
