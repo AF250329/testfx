@@ -171,6 +171,9 @@ function Perform-Restore {
 
   $nuget = Locate-NuGet
   $nugetConfig = Locate-NuGetConfig
+
+  Write-Host "====================== Current location: $(Get-Location)"
+
   $toolset = ".\scripts\Toolset\tools.proj"
   if ($TFB_ClearPackageCache) {
     Write-Log "Clearing local package cache..."
