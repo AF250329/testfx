@@ -140,7 +140,11 @@ function Locate-VsWhere {
   #DEBUG  
 
 
-  $vswhere = Join-Path -path $packagesPath -childPath "vswhere\$vswhereVersion\tools\vswhere.exe"
+  # $vswhere = Join-Path -path $packagesPath -childPath "vswhere\$vswhereVersion\tools\vswhere.exe"
+
+  # if ((Test-Path -Path $vswhere -PathType Leaf) -eq $false) {
+    $vswhere = "C:\ProgramData\Chocolatey\bin\vswhere.exe"
+  # }
 
   Write-Verbose "vswhere location is : $vswhere"
   return $vswhere
