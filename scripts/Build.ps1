@@ -204,6 +204,10 @@ function Perform-Build {
 
   Write-Log "Perform-Build: Started."
 
+  #DEBUG  
+  Get-ChildItem . -Recurse
+  #DEBUG  
+
   if ($TFB_Clean) {
     $foldersToDel = @( $TFB_Configuration, "TestAssets" )
     Write-Log "    Clean build requested."
