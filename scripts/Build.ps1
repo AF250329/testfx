@@ -205,7 +205,7 @@ function Perform-Build {
   Write-Log "Perform-Build: Started."
 
   #DEBUG  
-  Get-ChildItem . -Recurse
+  Get-ChildItem -Path $(Get-Location) -Recurse
   #DEBUG  
 
   if ($TFB_Clean) {
