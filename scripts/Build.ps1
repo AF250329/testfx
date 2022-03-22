@@ -175,6 +175,11 @@ function Perform-Restore {
   Write-Host "====================== Current location: $(Get-Location)"
 
   $toolset = ".\scripts\Toolset\tools.proj"
+  if ((Test-Path -Path $toolset -PathType Leaf) -eq $false) {
+    $toolset = ".\testfx\scripts\Toolset\tools.proj"
+  }
+
+
   if ($TFB_ClearPackageCache) {
     Write-Log "Clearing local package cache..."
     & $nuget locals all -clear
